@@ -5,52 +5,115 @@
 <title>Learn about CuiXiyan!</title>
 
 <style>
-body{
+:root {
+    --primary: #FF006F;
+    --secondary: #040033;
+    --accent: #00FFA6;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    margin:0;
+    background: #f5f5f5;
+    margin: 0;
 }
 
-.container{
-    max-width:800px;
-    margin:60px auto;
-    background:white;
-    padding:40px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+/* 导航栏样式 */
+nav {
+    background: var(--secondary);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 允许换行 */
 }
 
-h1{
-    margin-bottom:10px;
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 8px 15px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.subtitle{
-    color:gray;
+nav a:hover {
+    color: var(--primary);
 }
 
-.section{
-    margin-top:30px;
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-ul{
-    padding-left:20px;
+h1 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.subtitle {
+    color: gray;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* 导航栏垂直排列 */
+        align-items: flex-start;
+    }
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    h1 {
+        font-size: 1.2em;
+    }
 }
 </style>
-
 </head>
 
 <body>
+
+<!-- 导航栏 -->
+<nav>
+    <div style="color: var(--accent); font-weight: bold;">Cui Xiyan</div>
+    <div>
+        <a href="#about">About me</a>
+        <a href="#research">Research</a>
+        <a href="#vibe">Vibe coding tool</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
 <div class="container">
 
 <h1>Cui Xiyan</h1>
 <p class="subtitle">from University of Science and Technology of China </p>
 
-<div class="section">
+<div class="section" id="about">
 <h2>About me</h2>
-<p>
-My major is biosciences. I want to be a scientist.
-</p>
+<p>My major is biosciences. I want to be a scientist.</p>
 </div>
 
 <div class="section">
@@ -63,7 +126,7 @@ My major is biosciences. I want to be a scientist.
 </ul>
 </div>
 
-<div class="section">
+<div class="section" id="research">
 <h2>Research Interest</h2>
 <ul>
 <li>Embryo</li>
@@ -72,7 +135,17 @@ My major is biosciences. I want to be a scientist.
 </ul>
 </div>
 
-<div class="section">
+<div class="section" id="vibe">
+<h2>Vibe coding tool</h2>
+<p>Coming soon...</p>
+</div>
+
+<div class="section" id="blogs">
+<h2>Blogs</h2>
+<p>Coming soon...</p>
+</div>
+
+<div class="section" id="contact">
 <h2>Contact me</h2>
 <p>Email: cxy2023@mail.ustc.edu.cn</p>
 <p>Tel: +86 16643575800</p>
