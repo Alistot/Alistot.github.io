@@ -10,6 +10,24 @@ body {
     margin: 0;
 }
 
+.spark {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
 /*导航栏整体*/
 nav {
     background: var(--secondary); 
@@ -31,6 +49,18 @@ nav a {
 
 nav a:hover {
     color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.divider {
+    width: 1px;
+    height: 18px;
+    background: white;
+    margin: 0 12px;
 }
 
 .container {
@@ -129,7 +159,7 @@ nav a:hover {
 }
 
 .section img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin-top: 15px;
