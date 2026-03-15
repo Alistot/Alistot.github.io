@@ -5,26 +5,28 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, sans-serif;
     background: #f5f5f5;
     margin: 0;
 }
 
+/*导航栏整体*/
 nav {
-    background: var(--secondary);
-    padding: 15px 30px;
-    display: flex;
+    background: var(--secondary); 
+    padding: 15px 30px; /*导航栏内部边距*/
+    display: flex; /*布局*/
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
+/*导航栏链接*/
 nav a {
     color: var(--accent);
     text-decoration: none;
     margin: 8px 15px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s; /*颜色变化动画*/
 }
 
 nav a:hover {
