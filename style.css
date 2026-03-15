@@ -44,7 +44,13 @@ nav a:hover {
 
 .hero{
     height: 350px;
-    background-image: url("/pictures/stay_up_late.jpg");
+    background-image: url("/pictures/yexilake.jpg");
     background-size: cover;
     background-position: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
 }
