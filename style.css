@@ -57,15 +57,21 @@ nav a:hover {
 
 .hero-text {
     position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    top: 50%;             /* 垂直居中 */
+    left: 50%;            /* 水平居中 */
+    transform: translate(-50%, -50%); /* 精确居中 */
+    
     text-align: center;
+
+    display: flex;        /* 改成 flex 布局 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .typewriter {
+    position: absolute;
+ 
     font-size: 40px;
     font-weight: bold;
     font-family: Monaco, monospace;
@@ -87,6 +93,8 @@ nav a:hover {
 
 
 .fixed-name {
+    position: absolute;
+
     font-size: 36px;
     font-style: italic;
     font-weight: bold;
@@ -97,6 +105,8 @@ nav a:hover {
 
     opacity: 0;
     animation: fadein 1s 5s forwards;
+
+    white-space: nowrap;
 }
 
 /* 打字效果 */
