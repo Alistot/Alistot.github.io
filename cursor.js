@@ -1,22 +1,22 @@
-const colors = ["#FF006F", "#00FFA6", "#040033"];
+const colors = ['#FF006F', '#00FFA6',"#040033"]; // 你的主题色
 
 document.addEventListener("mousemove", function(e) {
-    const spark = document.createElement("div");
+const spark = document.createElement("div");
 
-    spark.className = "spark";
-    document.body.appendChild(spark);
+spark.className = "spark";
+document.body.appendChild(spark);
 
-    const size = Math.random() * 6 + 4;
+const size = Math.random() * 6 + 4;
 
-    spark.style.left = e.pageX + "px";
-    spark.style.top = e.pageY + "px";
-    spark.style.background = colors[Math.floor(Math.random() * colors.length)];
-    spark.style.width = size + "px";
-    spark.style.height = size + "px";
+spark.style.left = e.pageX + "px";
+spark.style.top = e.pageY + "px";
+spark.style.background = colors[Math.floor(Math.random() * colors.length)];
+spark.style.width = size + "px";
+spark.style.height = size + "px";
 
-    setTimeout(() => {
-        spark.remove();
-    }, 500);
+setTimeout(() => {
+spark.remove();
+}, 500);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -14,7 +14,23 @@ body {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    animation: fadeOut 0.5s linear forwards;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+    animation: sparkFade 0.5s ease-out forwards;
+}
+
+@keyframes sparkFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
 }
 
 @keyframes fadeOut {
@@ -65,28 +81,30 @@ nav a:hover {
 
 .container {
     position: relative; 
-    max-width: 90%;
+    max-width: 90%; /* 帖子宽度限制 */
     margin: 40px auto;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85); /* 稍微不透明一点，阅读体验更好 */
     padding: 40px;
-    border-radius: 4px;
-    box-shadow: 0 10px 2cap rgba(4,0,51,0.1);
-    backdrop-filter: blur(8px);
+    border-radius: 12px; /* 把直角稍微调圆润一点，更像卡片 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 修正了原代码的 2cap 笔误 */
+    backdrop-filter: blur(15px); /* 增加模糊度，玻璃感更强 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 10px;
-  border-radius: 4px;
-  background: linear-gradient(
-        90deg,
-        #FF006F,
-        #00FFA6
-    );
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(90deg, #FF006F, #00FFA6);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .hero{
@@ -193,4 +211,67 @@ nav a:hover {
     display: block;
     margin-top: 15px;
     border-radius: 8px;
+}
+
+.blog-post {
+    position: relative; 
+    max-width: 90%; /* 帖子宽度限制 */
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.85); /* 稍微不透明一点，阅读体验更好 */
+    padding: 40px;
+    border-radius: 12px; /* 把直角稍微调圆润一点，更像卡片 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 修正了原代码的 2cap 笔误 */
+    backdrop-filter: blur(15px); /* 增加模糊度，玻璃感更强 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* 顶部彩色装饰条 */
+.blog-post::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(90deg, #FF006F, #00FFA6);
+}
+
+/* 图片区域 */
+.blog-image {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden; /* 防止图片溢出圆角 */
+}
+
+.blog-image img {
+    max-width: 100%;   /* 图片最大宽度不超过容器 */
+    max-height: 400px; /* 图片最大高度不超过 400px */
+    width: auto;       /* 宽度随比例自动调整 */
+    height: auto;      /* 高度随比例自动调整 */
+    display: block;    /* 移除图片下方的微小间隙 */
+    margin: 0 auto;    /* 居中显示 */
+    transition: transform 0.3s ease;
+}
+
+.blog-image img:hover {
+    transform: scale(1.02); /* 给图片加一点微动效 */
+}
+
+/* 文字区域 */
+.text-body {
+    line-height: 1.6;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
 }
