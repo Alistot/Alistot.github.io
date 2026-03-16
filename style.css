@@ -99,7 +99,7 @@ nav a:hover {
     width: 100%;
     height: 315px;
     object-fit: cover;
-    filter: blur(4px);
+    filter: blur(2px);
 }
 
 .hero-text {
@@ -108,29 +108,46 @@ nav a:hover {
     text-align: center;
 }
 
-.typewriter { 
+.typewriter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    white-space: nowrap;
-
+    
+    /* 核心设置 */
+    font-family: monospace; 
     font-size: 50px;
     font-weight: bold;
-    font-family: monospace;
-
-    color: transparent;
-    -webkit-text-stroke: 2px white;   /* 白色描边 */
-
-    border-right: 3px solid white;
+    white-space: nowrap;
     overflow: hidden;
+    
+    /* 空心描边 */
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    
+    /* 光标 */
+    border-right: 3px solid white; 
+    width: 0; 
+}
 
-    width: 0;
+/* 打字动画 */
+@keyframes typing {
+    from { width: 0; }
+    to { width: var(--total-width); } 
+}
 
-    animation:
-        typing 3s steps(15) forwards,
-        blink 0.7s infinite,
-        fadeout 2s 4s forwards;
+/* 光标闪烁 */
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* 文字消失 */
+@keyframes fadeout {
+    to { opacity: 0; }
+}
+
+@keyframes fadein {
+    to { opacity: 1; }
 }
 
 
@@ -150,30 +167,11 @@ nav a:hover {
     -webkit-text-stroke: 2px white;
 
     opacity: 0;
-    animation: fadein 1s 5s forwards;
+    animation: fadein 1s forwards;
 
     white-space: nowrap;
 }
 
-/* 打字效果 */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 15ch }
-}
-
-/* 光标闪烁 */
-@keyframes blink {
-    50% { border-color: transparent }
-}
-
-/* 文字消失 */
-@keyframes fadeout {
-    to { opacity: 0 }
-}
-
-@keyframes fadein {
-    to { opacity: 1; }
-}
 
 .hero::after {
   content: "";
