@@ -79,33 +79,6 @@ nav a:hover {
     margin: 0 12px;
 }
 
-.container {
-    position: relative; 
-    max-width: 90%; /* 帖子宽度限制 */
-    margin: 40px auto;
-    background: rgba(255, 255, 255, 0.85); /* 稍微不透明一点，阅读体验更好 */
-    padding: 40px;
-    border-radius: 12px; /* 把直角稍微调圆润一点，更像卡片 */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 修正了原代码的 2cap 笔误 */
-    backdrop-filter: blur(15px); /* 增加模糊度，玻璃感更强 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    border-radius: 12px 12px 0 0;
-    background: linear-gradient(90deg, #FF006F, #00FFA6);
-}
-
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
 
 .hero{
     height: 315px;
