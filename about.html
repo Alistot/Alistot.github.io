@@ -7,6 +7,7 @@
 </head>
 <body>
 <script src="cursor.js"></script>
+<script src="carousel.js"></script>
 
 <!-- 导航栏 -->
 <nav>
@@ -38,11 +39,10 @@
 
 <div class="blog-post">
     <div class="blog-content">
-        <h2>这是标题</h2>
-        <p class="date">2026年3月16日</p>
-        
+        <h2>My Dog</h2>
+        <p>This is my dog Mantou.</p>
         <div class="blog-image">
-            <img src="pictures/topshanghai.jpg" alt="Blog Image">
+            <img src="pictures/my_dog.jpg" alt="Blog Image">
         </div>
         
         <div class="text-body">
@@ -50,6 +50,29 @@
         </div>
     </div>
 </div>
+
+<div class="blog-post">
+    <div class="blog-content">
+        <h2>My Friend</h2>
+        <div class="blog-carousel">
+            <div class="carousel-track">
+                 <img src="/pictures/sunshuo.jpg" class="carousel-image active">
+                <img src="/pictures/yellowss.jpg" class="carousel-image">
+            </div>
+
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        
+        <div class="text-body">
+            She is my friend Sun Shuo. She is a third-year student majoring in International Chinese Language Education at Minzu University of China. She enjoys being abstract.
+        </div>
+    </div>
+</div>
+
+
+
+
 
 </body>
 </html>
